@@ -117,16 +117,15 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  let argumentos = arguments[0];
-  let total = 0;
-  if (argumentos.length === 0) {
+  let total = arguments[0];
+  if (arguments.length === 0) {
     return 0;
   }
-  if (argumentos.length === 1) {
-    return argumentos;
+  if (arguments.length === 1) {
+    return arguments[0];
   }
-  for (let i = 0; i < argumentos.length; i++) {
-    total = total * argumentos[i];
+  for (let i = 1; i < arguments.length; i++) {
+    total = total * arguments[i];
   }
   return total;
 }
@@ -136,7 +135,7 @@ function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
   let cuenta = 0;
-  for (let i = 0; arreglo.length; i++) {
+  for (let i = 0; i < arreglo.length; i++) {
     if (arreglo[i] > 18) {
       ++cuenta; 
     }
@@ -150,10 +149,10 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if (numeroDeDia === 1 || numeroDeDia === 7) {
+  if (numeroDeDia === 7 || numeroDeDia === 1) {
     return "Es fin de semana";
   } else {
-    return "Es dia laboral";
+    return "Es dia Laboral";
   }
 } 
 
@@ -163,7 +162,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   let cadena = n.toString();
-  if (cadena[0] === 9) {
+  if (cadena[0] === "9") {
     return true;
   } else {
     return false;
@@ -175,9 +174,8 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí 
-  let posicion = arreglo[0];
-  for (let i = 0; i < posicion.length; i++) {
-    if (posicion[i] === posicion[i + 1]) {
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] === arreglo[i + 1]) {
       return true;
     } else {
       return false;
@@ -195,8 +193,6 @@ function mesesDelAño(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] == "Enero" || array[i] == "Marzo" || array[i] == "Noviembre") {
       arreglo.push(array[i]);
-    } else {
-      return "No se encontraron los meses pedidos";
     }
   }
   if (arreglo.length < 3) {
@@ -229,7 +225,7 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
   let arreglo = [];
-  for (let i = 0; i < 10; i++) {
+  for (var i = 0; i < 10; i++) {
     numero+=2;
     if (numero === i) break
     else {
