@@ -14,9 +14,7 @@ function invocarCallback(cb) {
   return cb();
 }
 
-function cb(n1, n2) {
-  return n1 + n2;
-}
+let cb = (numero_1, numero_2) => numero_1 + numero_2;
 
 function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
@@ -31,9 +29,7 @@ function sumarArray(numeros, cb) {
   // No es necesario devolver nada
   //Tu código:
   let suma = 0;
-  numeros.forEach(elementoDelArreglo => {
-    suma+=elementoDelArreglo;
-  });
+  numeros.forEach(elementoDelArreglo => suma+=elementoDelArreglo);
   cb(suma);
 }
 
@@ -57,11 +53,7 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  let arreglo = array.filter(function(letra) {
-    if (letra[0] == "a") {
-      return letra;
-    }
-  });
+  let arreglo = array.filter(elemento => elemento[0] == "a" ? elemento : "");
   return arreglo;
 }
 
